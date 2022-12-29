@@ -333,6 +333,9 @@ class NimbleSequential(NimbleModule):
         kwargs['accumulate_gradients'] = accumulate_gradients
         kwargs['accumulate_gradients_counter'] = 0
 
+        ## Create autosave path
+        os.makedirs(auto_save_path, exist_ok=True)
+
         start_epoch = self.current_epoch + 1
         stop_epoch = epochs + self.current_epoch + 1
 
